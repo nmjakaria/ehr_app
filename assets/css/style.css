@@ -1,0 +1,145 @@
+/* assets/css/style.css */
+
+body {
+    background-color: #f8f9fa; /* Light grey background */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Allow main content to grow and push footer down */
+    padding-bottom: 20px; /* Some padding at the bottom */
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+/* Custom styles for the home page sections */
+.hero-section {
+    background: linear-gradient(to right, #007bff, #0056b3); /* Blue gradient */
+    color: white;
+    padding: 80px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-feature {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-feature:hover {
+    transform: translateY(-5px);
+}
+
+.advertisement-section {
+    padding: 40px 0;
+    background-color: #e9ecef;
+    border-radius: 8px;
+}
+
+.advertisement-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Ensure buttons have good spacing */
+.btn-group-lg .btn {
+    padding: 15px 30px;
+    font-size: 1.25rem;
+    margin: 10px; /* Add margin between buttons */
+}
+
+
+/* Add this to your existing assets/css/style.css file */
+
+@media print {
+    /* Hide all elements that should NOT be printed */
+    .no-print,
+    .navbar,          /* Hide your navigation bar */
+    .sidebar,         /* Hide any sidebar */
+    .footer,          /* Hide your main footer */
+    .container > .row:first-child, /* Hide alerts/messages at the top if they are outside print-area */
+    .btn,             /* Hide general buttons (adjust if you need some buttons for print) */
+    form,             /* Hide forms */
+    .alert,           /* Hide general alert messages */
+    h2                /* Adjust this if you have other H2s you want to hide, or target more specifically */
+    {
+        display: none !important;
+    }
+
+    /* Show only the content explicitly marked for printing */
+    .print-area {
+        display: block !important; /* Ensure the print area is visible */
+        width: 100% !important; /* Ensure it takes full width of the print page */
+        float: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important; /* Remove shadows */
+        border: none !important; /* Remove borders */
+        background-color: #fff !important; /* Ensure white background */
+    }
+
+    /* Adjust page margins for A4 paper size */
+    @page {
+        size: A4 portrait; /* Set paper size to A4 portrait */
+        margin: 1cm; /* Set margins to 1cm on all sides */
+    }
+
+    /* General styling for printed content */
+    body {
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact; /* For WebKit browsers to print backgrounds/colors */
+        print-color-adjust: exact;         /* Standard property */
+    }
+
+    /* Ensure text is clear and readable on print */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.2em; /* Adjust font size for headings on print */
+        color: #000 !important; /* Ensure black text for print */
+    }
+    p, li, small {
+        font-size: 0.9em; /* Adjust font size for body text on print */
+        color: #000 !important;
+    }
+
+    /* Specific adjustments for your prescription content */
+    #prescription-content {
+        padding: 20px; /* Add some padding within the printed card body */
+        border: 1px solid #ccc; /* Add a subtle border around the content */
+        margin-top: 20px;
+    }
+
+    /* Ensure list items look clean */
+    .list-group-item {
+        border: none !important;
+        padding: 0.4rem 0 !important;
+    }
+    .list-group {
+        border: 1px solid #eee; /* Add a light border around the whole medication list */
+        padding: 5px;
+    }
+}
+
+.square-image-container {
+    width: 100%; /* Takes the full width of its parent column */
+    padding-bottom: 100%; /* This is the trick: makes height equal to width */
+    position: relative; /* Essential for absolute positioning of the image inside */
+    overflow: hidden; /* Hides any part of the image that spills outside the square */
+}
+
+.square-image-container img {
+    position: absolute; /* Position the image relative to the container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the square without distortion */
+    /* Remove img-fluid if you add it here, as it conflicts with explicit width/height */
+}
