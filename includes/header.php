@@ -41,6 +41,9 @@ $user_full_name = $_SESSION['full_name'] ?? '';
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/ehr_app/index.php">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/ehr_app/howitwork.php">How it work</a>
+                    </li>
                     <?php if ($is_logged_in): // Only show these if logged in ?>
                         <?php if ($user_type == 'doctor'): ?>
                             <li class="nav-item">

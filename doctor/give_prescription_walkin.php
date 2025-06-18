@@ -185,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <div class="card-body" id="prescription-content">
                     <div class="text-center mb-4">
-                        <img src="../assets/img/logo.png" alt="EHR Logo" style="max-width: 100px;">
+                        <img src="../assets/images/logo.png" alt="EHR Logo" style="max-width: 100px;">
                         <h4 class="mt-2 mb-0">Electronic Health Records System</h4>
                         <p class="text-muted">Prescription Details</p>
                     </div>
