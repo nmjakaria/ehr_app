@@ -95,7 +95,8 @@ try {
 ?>
 
 <div class="container mt-4">
-    <h1 id="welcomeMessage">Welcome, Patient <?php echo htmlspecialchars($_SESSION['full_name']); ?></h1>
+    <h1 id="welcomeMessage" style="text-align:center">My Health Profile</h1>
+    <h3 id="welcomeMessage">Welcome, Mr. <?php echo htmlspecialchars($_SESSION['full_name']); ?></h3>
 
     <?php if ($message): ?>
         <div class="alert alert-<?php echo $message_type; ?> alert-dismissible fade show" role="alert">

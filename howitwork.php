@@ -1,116 +1,122 @@
 <?php
-// patient/my_smart_health_card.php
+// PHP Setup: These lines handle page configuration and database connection.
 $title = "My SMART Health Card";
 require_once 'includes/db_connection.php';
-require_once 'includes/header.php';
-
+require_once 'includes/header.php'; // Includes the starting HTML tags and links to stylesheets (where the wallpaper CSS should live)
 ?>
 
-<div class="row justify-content-center mt-4">
-    <div class="col-md-10 col-lg-9">
-        <h2 class="mb-4 text-center">How to Electronic Health Record Work</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-        <div class="card shadow-sm mb-4">
-            <div class="card-header bg-primary text-white">
-                <h4 class="mb-0">What is a SMART Health Card?</h4>
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+    background-image: url('/banners/images/How\ its\ work.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: #f4f7f9; 
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.step-block .illustration {
+    max-width: 150px; /* Limits the size of the diagram images */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.info-card {
+    background-image: url('/banners/images/how\ it\ works\ 1.jpg'); 
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #ffffff; /* Example: White fallback */
+}
+
+.info-card .card-body {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.75); /* 75% opaque white layer */
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.info-card .card-header {
+    background-color: var(--bs-primary, #0d6efd) !important; /* Uses Bootstrap primary color */
+}
+  </style>
+</head>
+
+<body>
+  <main class="page-content">
+    <div class="container-fluid">
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-10 col-lg-9">
+          <h1 class="text-center mb-5">How Electronic Health Records Work</h1>
+
+          <section class="info-card card shadow-lg mb-5">
+            <header class="card-header bg-primary text-white">
+              <h2 class="mb-0">What is a SMART Health Card?</h2>
+            </header>
             <div class="card-body">
-                <p>A **SMART Health Card** is a secure, verifiable record of your health information, such as vaccination history or lab test results. It's designed to give you control over your personal health data.</p>
-                <p>It can be presented digitally on your phone or printed on paper. At its core, it uses a **secure QR code** that contains essential, verifiable clinical information like your name, date of birth, and details about your vaccinations or test results. It **does not** include sensitive identifiers like your social security number or address.</p>
-                <p>You typically receive a SMART Health Card from trusted healthcare providers (like your doctor's office, pharmacy, or public health agency). You can then store it in digital wallets (e.g., Apple Health, Google Pay) or keep a printed copy.</p>
-                <p>When you need to share your health status (e.g., at an event, workplace, or another healthcare provider), you present the QR code. A verifier uses a special app to scan the code, which cryptographically checks that the information hasn't been tampered with and that it came from a trusted source. Only the necessary information is displayed to the verifier.</p>
-                <p class="mb-0">This system prioritizes your privacy and security by ensuring data control, minimal data sharing, and tamper-proof verification.</p>
+              <p>A **SMART Health Card** is a secure, verifiable record of your health information, such as vaccination history or lab test results. It's designed to give you control over your personal health data.</p>
+              <p>It uses a **secure QR code** containing essential, verifiable clinical information like your name and date of birth. It **does not** include sensitive identifiers like your social security number or address.</p>
+              <p>You receive the card from trusted healthcare providers and can store it digitally or as a printed copy. The QR code is scanned by a verifier app which cryptographically checks the information for tampering and source validity, prioritizing your privacy and security.</p>
             </div>
+          </section>
         </div>
+      </div>
 
+      <section class="workflow-section pt-5" id="getSaveShareGraphic">
+        <div class="container">
+          <h1 class="text-center mb-5">How SMART Health Cards Work</h1>
+
+          <div class="row justify-content-center pt-5 pb-3">
+
+            <article class="col-12 col-lg-4 step-block">
+              <div class="card bg-white h-100 p-4 shadow-sm">
+                <img src="./banners/images/how it works 1.jpg" class="img-fluid mx-auto d-block illustration" alt="Illustration of signing a paper SMART Health Card">
+                <h2>Get it</h2>
+                <p>You receive a paper or digital SMART Health Card from an organization with your clinical data (pharmacy, doctor, registry). If you haven't received one, you can usually request it through their website or a compatible app.</p>
+                <p><a href="faq.html#How-can-I-get-a-SMART-Health-Card">Learn more about getting a SMART Health Card</a></p>
+              </div>
+            </article>
+
+            <article class="col-12 col-lg-4 step-block">
+              <div class="card bg-white h-100 p-4 shadow-sm">
+                <img src="./banners/images/Digital servey.jpg" class="img-fluid mx-auto d-block illustration" alt="Illustration of interacting with a digital SMART Health Card on a mobile device">
+                <h2>Save it</h2>
+                <p>You can store your SMART Health Card as a digital file on your devices or keep a printed copy. Parents or caregivers can also keep cards for others.</p>
+                <p><a href="faq.html#benefits">Learn more about the benefits of having your clinical information on hand</a></p>
+              </div>
+            </article>
+
+            <article class="col-12 col-lg-4 step-block">
+              <div class="card bg-white h-100 p-4 shadow-sm">
+                <img src="./banners/images/How its work.jpg" class="img-fluid mx-auto d-block illustration" alt="Illustration of presenting a SMART Health Card to a person behind a desk">
+                <h2>Share it</h2>
+                <p>You choose when to share your card, such as for travel or school registration. Sharing is done by letting someone scan the QR code (on paper or phone screen) or by sending the file/through an app.</p>
+                <p><a href="faq.html#sharingInformation">Learn more about sharing a SMART Health Card</a></p>
+              </div>
+            </article>
+
+          </div>
+          <div class="row py-3">
+            <div class="col-12">
+              <hr class="hr-yellow">
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
-</div>
-<section class="subSection pt-5" id="getSaveShareGraphic">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-lg-12 text-left">
-
-        <!-- Heading -->
-        <h1>
-          How SMART Health Cards work
-        </h1>
-
-      </div>
-    </div> <!-- / .row -->
-
-    <div class="row justify-content-center pt-5 pb-3">
-      <div class="col-12 col-lg-4 text-left">
-        <div class="row align-items-center bg-white pt-4 pb-4 pr-3">
-          <div class="col-12 order-1">
-            <!-- Image -->
-            <img src="/Assets/Images/MIC21224_Illustration1_v01_DS_2021_06_28.png" class="img-fluid ml-3 mx-auto d-block" alt="Illustration of signing a paper SMART Health Card">
-          </div>
-          <div class="col-12 order-2">
-            <!-- Heading -->
-            <h2>
-              Get it
-            </h2>
-            <!-- Text -->
-            <p class="fs-lg mb-7 mb-md-9">
-              You might receive a paper or digital SMART Health Card from any organization that has your clinical information, such as a pharmacy, doctor's office, or state immunization registry. If you haven't received one, you may be able to request it through that organization's website or a compatible app.
-            </p>
-            <p>
-              <a href="faq.html#How-can-I-get-a-SMART-Health-Card">Learn more about getting a <span class="chevronText">SMART Health Card </span></a>
-            </p>
-          </div>
-        </div> <!-- / .row -->
-      </div>
-      <div class="col-12 col-lg-4 text-left">
-        <div class="row align-items-center bg-white pt-4 pb-4 pr-3">
-          <div class="col-12 order-1">
-            <!-- Image -->
-            <img src="/Assets/Images/MIC21224_Illustration2_v01_DS_2021_06_28.png" class="img-fluid ml-3 mx-auto d-block" alt="Illustration of interacting with a digital SMART Health Card on a mobile device">
-          </div>
-          <div class="col-12 order-2">
-            <!-- Heading -->
-            <h2>
-              Save it
-            </h2>
-            <!-- Text -->
-            <p class="fs-lg mb-7 mb-md-9">
-              You can keep a SMART Health Card as a digital file on your phone, computer or anywhere you store digital information. You can also save a paper SMART Health Card and make copies for safe-keeping. If you are a parent or a caregiver, you can keep SMART Health Cards for others, just as you do with other clinical information.
-            </p>
-            <p>
-              <a href="faq.html#benefits">Learn more about the benefits of having your clinical information on hand </a>
-            </p>
-          </div>
-        </div> <!-- / .row -->
-      </div>
-      <div class="col-12 col-lg-4 text-left">
-        <div class="row align-items-center bg-white pt-4 pb-4 pr-3">
-          <div class="col-12 order-1">
-            <!-- Image -->
-            <img src="/Assets/Images/MIC21224_Illustration3_v01_DS_2021_06_28.png" class="img-fluid ml-3 mx-auto d-block" alt="Illustration of presenting a SMART Health Card to a person behind a desk">
-          </div>
-          <div class="col-12 order-2">
-            <!-- Heading -->
-            <h2>
-              Share it
-            </h2>
-            <!-- Text -->
-            <p class="fs-lg mb-7 mb-md-9">
-              You can share a SMART Health Card with others if you choose. For example, you might share it to show your vaccine status for school registration or travel. You share a SMART Health Card by letting someone scan the 2D barcode (QR code) on your paper or phone screen. You may also send it as a file or through a phone app.
-            </p>
-            <p>
-              <a href="faq.html#sharingInformation">Learn more about sharing a <span class="chevronText">SMART Health Card</span></a>
-            </p>
-          </div>
-        </div> <!-- / .row -->
-      </div>
-    </div> <!-- / .row -->
-
-    <div class="row py-3">
-      <div class="col-12">
-          <hr class="hr-yellow">
-      </div>
-    </div>
-  </div> <!-- / .container -->
-</section>
-
+  </main>
+</body>
+</html>
 <?php require_once 'includes/footer.php'; ?>

@@ -81,7 +81,7 @@ try {
 <div class="row justify-content-center">
     <div class="col-md-11 col-lg-10">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="mb-0">Manage Appointments</h2>
+            <h2 class="mb-0 mt-5">Manage Appointments</h2>
             <button type="button" class="btn btn-secondary" onclick="history.back()">
                 <i class="fas fa-arrow-left me-2"></i> Back
             </button>

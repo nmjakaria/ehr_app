@@ -1,0 +1,38 @@
+body {
+    background-image: url('/banners/images/How\ its\ work.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: #f4f7f9; 
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.step-block .illustration {
+    max-width: 150px; /* Limits the size of the diagram images */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.info-card {
+    background-image: url('/banners/images/how\ it\ works\ 1.jpg'); 
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #ffffff; /* Example: White fallback */
+}
+
+.info-card .card-body {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.75); /* 75% opaque white layer */
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.info-card .card-header {
+    background-color: var(--bs-primary, #0d6efd) !important; /* Uses Bootstrap primary color */
+}

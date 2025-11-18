@@ -9,7 +9,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Determine if a user is logged in and their type
+
 $is_logged_in = isset($_SESSION['user_id']);
 $user_type = $_SESSION['user_type'] ?? '';
 $user_full_name = $_SESSION['full_name'] ?? '';
@@ -137,7 +137,7 @@ $user_full_name = $_SESSION['full_name'] ?? '';
 
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="/ehr_app/assets/js/script.js"></script>
 
 </body>

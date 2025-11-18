@@ -12,6 +12,8 @@ require_once 'includes/header.php';
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0
     <link rel="stylesheet" href="/assets/css/style.css" class="css">
 </head>
 
@@ -19,11 +21,12 @@ require_once 'includes/header.php';
     <section class="hero-section text-center mb-5">
         <div class="container">
             <h1 class="display-4 mb-3">Your Health, Digitally Managed.</h1>
-            <p class="lead mb-4">Secure, efficient, and user-friendly Electronic Health Record system for doctors, patients, and administrators.</p>
+            <p class="lead mb-4">Your Health, In Your Hands – My Health Profile, a central healthcare platform for the citizens of Bangladesh, where you can easily access and manage your health records.</p>
+            <p class="mb-3 font-weight-bold font-italic">If you already have a patient account, please click the Patient Login button.</p>
             <div class="btn-group btn-group-lg" role="group" aria-label="Login Options">
                 <a href="doctor/login.php" class="btn btn-primary"><i class="fas fa-user-md me-2"></i> Doctor Login</a>
                 <a href="patient/login.php" class="btn btn-success"><i class="fas fa-user-injured me-2"></i> Patient Login</a>
-                <a href="admin/login.php" class="btn btn-info text-white"><i class="fas fa-user-shield me-2"></i> Admin Login</a>
+                <!-- <a href="admin/login.php" class="btn btn-info text-white"><i class="fas fa-user-shield me-2"></i> Admin Login</a> -->
             </div>
         </div>
     </section>
@@ -67,7 +70,7 @@ require_once 'includes/header.php';
             <div class="col-md-4 mb-3">
                 <div class="square-image-container"> <img src="/ehr_app/banners/images/138217258_10292830.jpg" alt="Advertisement 1" class="img-fluid">
                 </div>
-                <p>Your ad here!</p>
+                <p>Our Sponsors</p>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="square-image-container">
@@ -82,7 +85,10 @@ require_once 'includes/header.php';
                 <p>Healthcare solutions</p>
             </div>
         </div>
-    </section>
+</section>
+    <!-- Bootstrap JS and Popper.js for interactive components -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-5Qb6lL6ZSnM4tPFQyu1HFDigONydMUuN1ZpFdEyAJ9MkdaZkQpZk6p6u6Zp6QZk6p6u6Zp6QZk6p6u6Zp6QZk6p6u6Zp6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js" integrity="sha512-3ZbQb6lL6ZSnM4tPFQyu1HFDigONydMUuN1ZpFdEyAJ9MkdaZkQpZk6p6u6Zp6QZk6p6u6Zp6QZk6p6u6Zp6QZk6p6u6Zp6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
