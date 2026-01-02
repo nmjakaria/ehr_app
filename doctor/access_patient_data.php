@@ -43,7 +43,7 @@ if (!empty($token)) {
             $patient_info = $access_data; // Contains full_name, email, dob, etc.
 
             // Fetch patient's health conditions
-            $stmt_health = $pdo->prepare("SELECT * FROM health_conditions WHERE patient_id = ? ORDER BY date_recorded DESC LIMIT 5"); // Last 5 entries
+            $stmt_health = $pdo->prepare("SELECT * FROM health_conditions WHERE patient_id = ? ORDER BY date_recorded DESC LIMIT 10"); // Last 5 entries
             $stmt_health->execute([$patient_id_for_prescription]);
             $health_conditions = $stmt_health->fetchAll();
 
@@ -53,7 +53,7 @@ if (!empty($token)) {
                                          JOIN doctors d ON pr.doctor_id = d.id
                                          JOIN users u ON d.user_id = u.id
                                          WHERE pr.patient_id = ?
-                                         ORDER BY pr.prescription_date DESC LIMIT 5"); // Last 5 entries
+                                         ORDER BY pr.prescription_date DESC LIMIT 10"); // Last 5 entries
             $stmt_presc->execute([$patient_id_for_prescription]);
             $prescriptions = $stmt_presc->fetchAll();
 

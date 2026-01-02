@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2025 at 09:58 PM
+-- Generation Time: Nov 20, 2025 at 06:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -83,11 +83,16 @@ INSERT INTO `appointments` (`id`, `doctor_id`, `patient_id`, `appointment_date_t
 (1, 1, 1, '2025-07-01 02:39:00', 'I am ill', 'completed', NULL, '2025-06-11 00:39:53', '2025-06-12 15:35:45', NULL, NULL, NULL),
 (2, 1, 2, '2025-06-12 11:36:00', 'Ajjskk', 'cancelled', NULL, '2025-06-11 09:36:49', '2025-06-12 17:48:13', 'fgweqrdstgvdsf', NULL, NULL),
 (3, 2, 1, '2025-06-13 11:04:00', 'ঘুম বেশি', 'completed', NULL, '2025-06-12 09:05:05', '2025-06-12 15:35:56', NULL, NULL, NULL),
-(4, 1, 1, '2025-06-13 19:07:00', 'ভাত খায়তে পারিনা', 'accepted', NULL, '2025-06-12 17:08:09', '2025-06-12 17:08:20', NULL, NULL, NULL),
+(4, 1, 1, '2025-06-13 19:07:00', 'ভাত খায়তে পারিনা', 'completed', NULL, '2025-06-12 17:08:09', '2025-11-18 05:49:57', NULL, NULL, NULL),
 (5, 1, 2, '2025-06-13 19:19:00', 'পেট ব্যাথা', '', NULL, '2025-06-12 17:20:00', '2025-06-12 17:41:58', NULL, 'তুমি সকাল ১০টায় দেখা করো', NULL),
 (6, 1, 2, '2025-06-13 19:32:00', 'গুম', 'completed', NULL, '2025-06-12 17:32:29', '2025-06-12 17:34:42', NULL, NULL, '১৪৫৫'),
 (7, 1, 2, '2025-06-21 19:42:00', 'বুকে ব্যাপার', 'accepted', NULL, '2025-06-12 17:42:35', '2025-06-12 17:42:40', NULL, '', NULL),
-(8, 1, 2, '2025-06-26 19:43:00', 'জজরর', 'accepted', NULL, '2025-06-12 17:43:31', '2025-06-12 17:43:44', NULL, 'দহগসযডপ তকুইদতা', NULL);
+(8, 1, 2, '2025-06-26 19:43:00', 'জজরর', 'accepted', NULL, '2025-06-12 17:43:31', '2025-06-12 17:43:44', NULL, 'দহগসযডপ তকুইদতা', NULL),
+(9, 1, 2, '2025-06-17 08:29:00', 'fawsdffwgerqgerqgerq', 'accepted', NULL, '2025-06-16 06:29:39', '2025-06-16 06:31:15', NULL, 'ljqwiejtoejflk psdjf', NULL),
+(10, 1, 2, '2025-06-19 09:45:00', 'asdf afadsf', 'accepted', NULL, '2025-06-18 07:46:12', '2025-09-02 04:41:49', NULL, '', NULL),
+(11, 3, 4, '2025-11-11 17:52:00', 'পেট ব্যাথা', 'completed', NULL, '2025-11-11 04:52:58', '2025-11-11 04:56:50', NULL, 'তুমি সন্ধ্যা ৬টায় চেম্বারে দেখা করো', NULL),
+(12, 3, 4, '2025-11-11 18:26:00', 'qwwawa', 'completed', NULL, '2025-11-11 05:27:08', '2025-11-11 05:32:31', NULL, 'fhghjjh', NULL),
+(13, 2, 5, '2025-11-18 17:37:00', 'Head Pain', 'accepted', NULL, '2025-11-18 04:38:12', '2025-11-18 05:52:41', NULL, NULL, 'I am busy at this time. Please book appointment at tomorrow');
 
 -- --------------------------------------------------------
 
@@ -138,7 +143,8 @@ CREATE TABLE `doctors` (
 
 INSERT INTO `doctors` (`id`, `user_id`, `designation`, `chamber_location`, `education_qualification`, `specialty`, `license_number`, `profile_picture`, `created_at`, `updated_at`) VALUES
 (1, 2, 'Medical Officer.', 'CMC, Bangladesh', 'MBBS, FCPS, BCS (Health)', 'Cardiologist', '10001', NULL, '2025-06-11 00:26:02', '2025-06-11 07:30:19'),
-(2, 4, 'Officer', 'Balul', 'MBBS, FCPS (Medicine), BCS(Health)', 'Neurologist', '10002', NULL, '2025-06-11 08:46:05', '2025-06-11 08:46:05');
+(2, 4, 'Officer', 'Balul', 'MBBS, FCPS (Medicine), BCS(Health)', 'Neurologist', '10002', NULL, '2025-06-11 08:46:05', '2025-06-11 08:46:05'),
+(3, 8, 'Medical Officer', 'BGC', 'MBBS, BCS', 'Cardiology', 'MS-000399', NULL, '2025-11-11 04:50:54', '2025-11-11 04:50:54');
 
 -- --------------------------------------------------------
 
@@ -171,7 +177,10 @@ INSERT INTO `health_conditions` (`id`, `patient_id`, `date_recorded`, `height_cm
 (4, 1, '2025-06-12', 112.00, 46.00, 3.25, 86, 108, 'Obesity', '2025-06-12 09:42:38', '2025-06-12 09:42:38'),
 (5, 1, '2025-06-12', 116.00, 46.00, 3.25, 86, 108, 'Obesity', '2025-06-12 09:44:27', '2025-06-12 09:44:27'),
 (6, 1, '2025-06-12', 116.00, 66.00, 3.25, 86, 108, 'Obesity', '2025-06-12 09:44:42', '2025-06-12 09:44:42'),
-(7, 2, '2025-06-12', 150.00, 50.00, 5.66, 75, 100, 'Normal weight', '2025-06-12 17:51:57', '2025-06-12 17:51:57');
+(7, 2, '2025-06-12', 150.00, 50.00, 5.66, 75, 100, 'Normal weight', '2025-06-12 17:51:57', '2025-06-12 17:51:57'),
+(8, 2, '2025-06-18', 158.00, 80.00, 5.66, 75, 100, 'Obesity', '2025-06-18 08:02:52', '2025-06-18 08:02:52'),
+(9, 2, '2025-06-18', 159.00, 70.00, 5.66, 75, 100, 'Overweight', '2025-06-18 08:03:28', '2025-06-18 08:03:28'),
+(10, 5, '2025-11-18', 176.00, 60.00, 95.00, 125, 99, 'Normal weight', '2025-11-18 04:42:51', '2025-11-18 04:42:51');
 
 -- --------------------------------------------------------
 
@@ -236,7 +245,7 @@ INSERT INTO `lab_tests` (`id`, `test_name`, `description`, `created_at`) VALUES
 (2, 'Blood Glucose Test', '', '2025-06-12 12:31:48'),
 (3, 'Lipid Profile', 'Total Cholesterol, HDL, LDL', '2025-06-12 12:32:59'),
 (4, 'LFT - Liver Function Test', '', '2025-06-12 12:34:22'),
-(5, 'KFT / RFT', 'Kidney Function Test / Renal Function Test', '2025-06-12 12:34:24');
+(5, 'KFT / RFT', 'Kidney dess', '2025-06-12 12:34:24');
 
 -- --------------------------------------------------------
 
@@ -277,7 +286,10 @@ CREATE TABLE `patients` (
 
 INSERT INTO `patients` (`id`, `user_id`, `date_of_birth`, `gender`, `blood_group`, `created_at`, `updated_at`) VALUES
 (1, 3, '2007-12-05', 'Male', 'O+', '2025-06-11 00:28:08', '2025-06-11 00:28:08'),
-(2, 5, '2005-06-16', 'Male', 'AB+', '2025-06-11 09:05:01', '2025-06-11 09:05:01');
+(2, 5, '2005-06-16', 'Male', 'AB+', '2025-06-11 09:05:01', '2025-06-11 09:05:01'),
+(3, 6, '1997-01-05', 'Male', 'A+', '2025-11-04 14:36:24', '2025-11-04 14:36:24'),
+(4, 7, '2002-01-01', 'Male', 'O-', '2025-11-11 04:46:07', '2025-11-11 04:46:07'),
+(5, 9, '2002-06-01', 'Male', 'B+', '2025-11-18 04:36:34', '2025-11-18 04:36:34');
 
 -- --------------------------------------------------------
 
@@ -322,7 +334,10 @@ CREATE TABLE `patient_uploaded_prescriptions` (
 
 INSERT INTO `patient_uploaded_prescriptions` (`id`, `patient_id`, `notes`, `image_path`, `uploaded_at`, `medications_json`) VALUES
 (1, 1, '', NULL, '2025-06-12 06:58:42', '[{\"name\":\"Napa 500mg\",\"dosage\":\"3 tab\",\"frequency\":\"Daily\"},{\"name\":\"Provair\",\"dosage\":\"1 tab\",\"frequency\":\"Daily\"}]'),
-(2, 1, '', 'uploads/prescriptions/pres_684a7defa0245_ChatGPT Image Jun 4, 2025, 01_25_36 AM.png', '2025-06-12 07:12:47', '[{\"name\":\"Mkast 10\",\"dosage\":\"1\",\"frequency\":\"Daily\"}]');
+(2, 1, '', 'uploads/prescriptions/pres_684a7defa0245_ChatGPT Image Jun 4, 2025, 01_25_36 AM.png', '2025-06-12 07:12:47', '[{\"name\":\"Mkast 10\",\"dosage\":\"1\",\"frequency\":\"Daily\"}]'),
+(3, 4, '', 'uploads/prescriptions/pres_6912bff9ebc6f_CamScanner 04-19-2025 15.53_2.jpg', '2025-11-11 04:47:53', '[{\"name\":\"Napa\",\"dosage\":\"500mg\",\"frequency\":\"BID\"}]'),
+(4, 4, '', 'uploads/prescriptions/pres_6912c8f99123c_9.pdf', '2025-11-11 05:26:17', '[{\"name\":\"q\",\"dosage\":\"\",\"frequency\":\"q\"}]'),
+(5, 5, 'This kdsfjdkferiughjgnsklgjnsfhgueofghoeurgjsdfvnseruhg', 'uploads/prescriptions/pres_691bf8bec47ed_সাস্থ্য কেন্দ্র.pdf', '2025-11-18 04:40:30', '[{\"name\":\"tupnil\",\"dosage\":\"3 tab\",\"frequency\":\"Daily\"}]');
 
 -- --------------------------------------------------------
 
@@ -357,7 +372,11 @@ INSERT INTO `prescriptions` (`id`, `doctor_id`, `patient_id`, `diagnosis`, `medi
 (6, 1, NULL, 'adwtdfsgfd', '[{\"name\":\"sadf\",\"dosage\":\"ewrw\",\"frequency\":\"er\"}]', 'ewrwer', '2025-06-12 16:54:00', '', '', NULL, 'Habza', 'Female', '2025-06-02'),
 (7, 1, NULL, 'adwtdfsgfd', '[{\"name\":\"sadf\",\"dosage\":\"ewrw\",\"frequency\":\"er\"}]', 'ewrwer', '2025-06-12 16:55:25', '', '', NULL, 'Habza', 'Female', '2025-06-02'),
 (8, 1, NULL, 'adfewrqwe', '[{\"name\":\"sadf\",\"dosage\":\"ewrw\",\"frequency\":\"er\"},{\"name\":\"dfg\",\"dosage\":\"fgdf\",\"frequency\":\"ert\"}]', 're5rdge', '2025-06-12 17:00:36', '', '', NULL, 'Habzas', 'Female', '2025-06-02'),
-(9, 1, NULL, 'etfrds', '[{\"name\":\"sadf\",\"dosage\":\"ewrw\",\"frequency\":\"er\"}]', 'wtert', '2025-06-12 17:03:47', '', '', NULL, 'Habzas', 'Female', '2025-06-02');
+(9, 1, NULL, 'etfrds', '[{\"name\":\"sadf\",\"dosage\":\"ewrw\",\"frequency\":\"er\"}]', 'wtert', '2025-06-12 17:03:47', '', '', NULL, 'Habzas', 'Female', '2025-06-02'),
+(10, 2, NULL, 'Klban', '[{\"name\":\"Tab. Abc\",\"dosage\":\"20mg\",\"frequency\":\"1+1+0\"},{\"name\":\"Shy. Avc\",\"dosage\":\"30mg\",\"frequency\":\"1+1+2\"}]', 'Hxhvxn', '2025-06-13 09:29:16', '', '', NULL, 'Hafiz', 'Male', '2025-06-02'),
+(11, 1, NULL, 'alsdkfjinglqeriojipfjasdpif', '[{\"name\":\"napa\",\"dosage\":\"500mg\",\"frequency\":\"1+1+1\"},{\"name\":\";laksjf\",\"dosage\":\"200mg\",\"frequency\":\"1+0+0\"}]', 'sdfjasldkjf', '2025-06-16 06:27:17', '', '', NULL, 'tahsin', 'Male', '2004-02-03'),
+(12, 1, NULL, 'Fever 3day 102.4 F', '[{\"name\":\"Amoxicillin\",\"dosage\":\"250mg\",\"frequency\":\"BID\"},{\"name\":\"Napa Extend\",\"dosage\":\"625 mg\",\"frequency\":\"BID\"},{\"name\":\"Maxpro\",\"dosage\":\"20mg\",\"frequency\":\"BID\"},{\"name\":\"Provair\",\"dosage\":\"10mg\",\"frequency\":\"0+0+1\"}]', 'GO', '2025-06-18 07:29:08', '', '', NULL, 'Sadman', 'Male', '2003-02-22'),
+(13, 3, NULL, 'ঋউইআঋউইআ', '[{\"name\":\"উঋইআ\",\"dosage\":\"\",\"frequency\":\"১\"},{\"name\":\"১\",\"dosage\":\"\",\"frequency\":\"১\"}]', 'উঋইআ', '2025-11-11 04:54:33', '', '', NULL, 'ঋউইআঋউইআ', 'Male', '2025-11-12');
 
 -- --------------------------------------------------------
 
@@ -384,7 +403,16 @@ INSERT INTO `qr_access_tokens` (`id`, `patient_id`, `token`, `expires_at`, `is_u
 (3, 1, 'cfa8cb3135d707adad08aad8841fffb7a5012aa1068e51382c165d8d0317c6eb', '2025-06-12 13:03:27', 1, '2025-06-12 10:58:27'),
 (4, 1, 'd371470dbcbcee1ecb29cf3ae25340718871f59b65c541065f3f458214261eed', '2025-06-12 13:20:24', 1, '2025-06-12 11:15:24'),
 (5, 1, 'c186d4b2530374a532dad7b8809b119669bb3a877e6bac518361d11a392a8803', '2025-06-12 14:25:44', 1, '2025-06-12 12:20:44'),
-(6, 1, '9daba45b5ba64702651b5bbe00c42ce0eeca62d70d3fedc482f5c946dc6dcee6', '2025-06-12 18:17:53', 1, '2025-06-12 16:12:53');
+(6, 1, '9daba45b5ba64702651b5bbe00c42ce0eeca62d70d3fedc482f5c946dc6dcee6', '2025-06-12 18:17:53', 1, '2025-06-12 16:12:53'),
+(7, 1, 'e695add65bd0eeb47066967c00233d052c0d9d7fed32de39b9ffa18103dd8afe', '2025-06-14 05:23:55', 0, '2025-06-14 03:18:55'),
+(8, 2, '3bf4675ae6b432b94755f3ec073bf448f4f63e11408a394c11e767d629f5ccfc', '2025-06-16 08:34:51', 1, '2025-06-16 06:29:51'),
+(9, 2, '7d9898f88d3993bdae4d7fc443f3d72de0f22ab1ff3d6981774157d8a5501b82', '2025-06-18 10:08:58', 0, '2025-06-18 08:03:58'),
+(10, 2, '1b01cac58243606df48ff9ea8ebdc0b5c04b6ac88e3fb86e49edb592e7ebf60b', '2025-06-18 10:08:59', 1, '2025-06-18 08:03:59'),
+(11, 1, '6937697e39bd183fa388a19a3917cb9f14d2f8de1e435917514f4483c358c3ca', '2025-09-02 06:48:39', 1, '2025-09-02 04:43:39'),
+(12, 3, '11ac523a6fb1d0bcafb6bf25542e6a4d25ac9039effab59710bf44e84d86fa71', '2025-11-04 17:00:11', 0, '2025-11-04 15:55:11'),
+(13, 3, '7eb810e6e272a2fc15120c762759e9872f02d14cb098c7af7f90f545a3cf8621', '2025-11-04 17:04:04', 1, '2025-11-04 15:59:04'),
+(14, 4, 'd7390de231635e47cca5418b91ccec3943fb17433cb8a806ed349e5a7b9d46f8', '2025-11-11 05:51:47', 0, '2025-11-11 04:46:47'),
+(15, 4, 'e3a09a3b7c9f084b84ff363d319ee26181a3d53c86f57aa7d3ca69eaab5d32ff', '2025-11-11 05:56:21', 1, '2025-11-11 04:51:21');
 
 -- --------------------------------------------------------
 
@@ -413,7 +441,11 @@ INSERT INTO `users` (`id`, `full_name`, `email`, `username`, `password`, `mobile
 (2, 'Md Mostak', 'mostak@gmail.com', 'drmostak', '$2y$10$pAOUbp6uIsN.JLAZu0S8F.9AoJ0DoaMQ87HVTvrKHuc7Dkus8AHD6', '01896543577', 'doctor', '2025-06-11 00:26:02', '2025-06-11 07:29:57'),
 (3, 'Habib', 'habib@gmail.com', 'mdhabib', '$2y$10$9MgfjM0lOxLg.bZHBKJDgeUBdgP4RrCWBVSnRciEYz3BDuCNCeNiy', '01254787854', 'patient', '2025-06-11 00:28:08', '2025-06-11 07:33:06'),
 (4, 'Md. Sakib', 'sakib@gmail.com', 'drsakib', '$2y$10$ZAFpuOa61jnDqBSZH/0TOuh/jRt0QAxxkb3CL1ecepf.XXK2zXbmi', '01345858575', 'doctor', '2025-06-11 08:46:05', '2025-06-11 08:46:05'),
-(5, 'Md Adib', 'adib@gmail.com', 'mdadib', '$2y$10$gnNpOp8jGzsFLnR8ri6vUO8kWyDderS0eTno7jVfOuHyAuGl4JS8W', '01425783625', 'patient', '2025-06-11 09:05:01', '2025-06-11 09:05:01');
+(5, 'Md Adib', 'adib@gmail.com', 'mdadib', '$2y$10$gnNpOp8jGzsFLnR8ri6vUO8kWyDderS0eTno7jVfOuHyAuGl4JS8W', '01425783625', 'patient', '2025-06-11 09:05:01', '2025-06-11 09:05:01'),
+(6, 'D.M Ashab Uddin', 'ashab@email.com', 'ashab', '$2y$10$0LzM.YURzx/ht9JIH2wD0eddCDAHQY0cLobKYgEfk124z6HbrT31e', '0181544747', 'patient', '2025-11-04 14:36:24', '2025-11-04 14:36:24'),
+(7, 'Mohammad Younus', 'younos@gmail.com', 'younos', '$2y$10$8LE996/xx5juI8uzij5bc.jFJGqqQcgzcCzpvhKNCA1HUC8Oa55oi', '01897711222', 'patient', '2025-11-11 04:46:07', '2025-11-11 04:46:07'),
+(8, 'Shachin', 'shachin@gmail.com', 'shachin123', '$2y$10$tCbvT6guNA2pUIZpWbPqFOlgiko4oKyzOWWnteScPPrUaFUy.uP4C', '01998822331', 'doctor', '2025-11-11 04:50:54', '2025-11-11 04:50:54'),
+(9, 'Md Naim Uddin', 'naim5641@gmail.com', 'NaimUddin', '$2y$10$L6K48/CcPyvm2uE5/o7GYeGZgYCWYPa2fXQ4rCwHMayswxDBXT8Ca', '01843619759', 'patient', '2025-11-18 04:36:34', '2025-11-18 04:36:34');
 
 --
 -- Indexes for dumped tables
@@ -559,7 +591,7 @@ ALTER TABLE `allergies`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `chronic_conditions`
@@ -571,13 +603,13 @@ ALTER TABLE `chronic_conditions`
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `health_conditions`
 --
 ALTER TABLE `health_conditions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `lab_orders`
@@ -607,7 +639,7 @@ ALTER TABLE `medical_reports`
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `patient_uploaded_lab_reports`
@@ -619,25 +651,25 @@ ALTER TABLE `patient_uploaded_lab_reports`
 -- AUTO_INCREMENT for table `patient_uploaded_prescriptions`
 --
 ALTER TABLE `patient_uploaded_prescriptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `prescriptions`
 --
 ALTER TABLE `prescriptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `qr_access_tokens`
 --
 ALTER TABLE `qr_access_tokens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
